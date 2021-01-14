@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Message form</title>
+</head>
+
+<body>
+	<h1>Message Form</h1>
+	<div>
+		<form th:action="@{/add/consumer/message}"
+			th:object="${message}" method="post">
+			<div>
+				<label>Consumer: </label>
+				 <select th:field = "*{message}">
+				 
+				 </select>
+			</div>
+			<div>
+				<label>Message: </label> 
+				<textarea th:field = "*{message}" rows="4" cols="50"></textarea>
+			</div>
+
+			<div>
+				<input type="submit" value="Add Message" />
+				 <input type="reset" value="Clear" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>
