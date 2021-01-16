@@ -1,7 +1,5 @@
 package com.example.zamut.controllers;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +8,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import com.example.zamut.dto.ConsumerDTO;
 import com.example.zamut.model.Consumer;
 import com.example.zamut.service.ConsumerService;
 
@@ -21,6 +16,12 @@ public class ConsumerController {
 	
 	@Autowired
 	ConsumerService consumerService;
+	
+	@GetMapping("/all/cunsumers")
+	public String allConsumers(Model model) {
+		model.addAttribute("consumers", consumerService.getAllConsumers());
+		return "all-consumers";
+	}
 	
 	@GetMapping("/add/consumer")
 	public String showSignUpForm(Model model) {
