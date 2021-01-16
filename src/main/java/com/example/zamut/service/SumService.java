@@ -18,4 +18,8 @@ public class SumService {
     public List<Sum> getAllSumOneConsumer(Consumer consumer) {
         return sumRepository.findAllByConsumer(consumer);
     }
+    
+    public List<Sum> getActiveSum() {
+    	return sumRepository.getActiveSum();
+    }
 }

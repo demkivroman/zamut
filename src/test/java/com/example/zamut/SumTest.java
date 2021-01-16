@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest
@@ -37,6 +38,24 @@ public class SumTest {
     	Consumer consumer = consumerService.getById(1);
     	List<Sum> sums = sumRepository.findAllByConsumerAndAmountGreaterThan(consumer, 0d);
     	Assertions.assertEquals(sums.size(), 2);
+    }
+    
+    @Test
+    public void whenCheckSumIsGreaterThanNull() {
+    	List<Sum> sums = sumRepository.getActiveSum();
+    	Assertions.assertEquals(sums.size(), 3);
+    }
+    
+    @Test
+    public void whenCheckSumGetAppropriateConsumerFullName() {
+    	List<Sum> sums = sumRepository.getActiveSum();
+    	List<String> names = new ArrayList<String>();
+    	sums.forEach(sum -> 
+    	names.add(
+    			sum.getConsumer().getFullname()
+    			));
+    	Assertions.assertEquals(names.size(), 3);
+    	
     }
     
 }

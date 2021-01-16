@@ -27,8 +27,34 @@ public class Sum {
 
     public Sum() {
     }
+    
+    
 
-    public Long getId() {
+    public Consumer getConsumer() {
+		return consumer;
+	}
+
+
+
+	public void setConsumer(Consumer consumer) {
+		this.consumer = consumer;
+	}
+
+
+
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
+	}
+
+
+
+	public Long getId() {
         return id;
     }
 

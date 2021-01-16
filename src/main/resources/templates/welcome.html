@@ -8,13 +8,22 @@
 <body style="padding-left: 5%; padding-top: 2%">
 	<div th:replace="header"></div>
 	<h3>Active invoices</h3>
-	<div id="mainTable" >
+	<div id="mainTable">
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Client</th>
+					<th scope="col">Note</th>
 					<th scope="col">Sum</th>
+				</tr>
+				<tr th:each="consumer, iStat: ${activeSums}">
+					<th scope="row" th:text="${iStat.index + 1}" />
+					<td><a th:text="${consumer.getConsumer().getFullname()}
+					+' - '+ ${consumer.getConsumer().getAddress()}" />
+					</td>
+					<td th:text="${consumer.message}"></td>
+					<td th:text="${consumer.amount}"></td>
 				</tr>
 			</thead>
 			<tbody>

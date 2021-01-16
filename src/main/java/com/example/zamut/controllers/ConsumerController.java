@@ -17,6 +17,8 @@ public class ConsumerController {
 	@Autowired
 	ConsumerService consumerService;
 	
+	
+	
 	@GetMapping("/all/cunsumers")
 	public String allConsumers(Model model) {
 		model.addAttribute("consumers", consumerService.getAllConsumers());
