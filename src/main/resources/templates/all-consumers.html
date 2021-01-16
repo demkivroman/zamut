@@ -7,20 +7,35 @@
 
 <body style="padding-left: 5%; padding-top: 2%">
 	<div th:replace="header"></div>
-	<h3>Clients list</h3>
-	<div id="mainTable" >
+	<h2>
+		Clients list &nbsp;&nbsp; 
+		<a href = "/add/consumer">
+			<button type="button" class="btn btn-default" aria-label="Left Align">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			</button>
+		</a>
+	</h2>
+
+	<div id="mainTable">
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Consumer</th>
 					<th scope="col">Add sum</th>
-					<th scope="col">Delete</th>
 					<th scope="col">Edit</th>
+					<th scope="col">Delete</th>
 				</tr>
 			</thead>
 			<tbody>
-
+				<tr th:each="consumer, iStat: ${consumers}">
+					<th scope="row" th:text="${iStat.index + 1}" />
+					<td th:text="${consumer.getFullname()}
+					+' - '+ ${consumer.getAddress()}"></td>
+					<td><a>New invoice</a></td>
+					<td><a>Edit client</a></td>
+					<td><a>Delete client</a></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

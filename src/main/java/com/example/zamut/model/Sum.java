@@ -1,5 +1,8 @@
 package com.example.zamut.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -21,9 +24,13 @@ public class Sum {
     @JoinColumn(name = "consumer_id")
     private Consumer consumer;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "invoice_id")
-    private Invoice invoice;
+    @ManyToMany
+    @JoinTable(
+    		name = "Invoice_Item_Collaborator",
+    		joinColumns = { @JoinColumn(name = "sum_id") },
+    		inverseJoinColumns = { @JoinColumn(name = "invoice_item_id") }
+    )
+    private Set<InvoiceItem> invItems = new HashSet<InvoiceItem>();
 
     public Sum() {
     }
@@ -39,20 +46,6 @@ public class Sum {
 	public void setConsumer(Consumer consumer) {
 		this.consumer = consumer;
 	}
-
-
-
-	public Invoice getInvoice() {
-		return invoice;
-	}
-
-
-
-	public void setInvoice(Invoice invoice) {
-		this.invoice = invoice;
-	}
-
-
 
 	public Long getId() {
         return id;

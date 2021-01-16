@@ -10,18 +10,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.example.zamut.model.Consumer;
 import com.example.zamut.service.ConsumerService;
+import com.example.zamut.service.SumService;
 
 @Controller
 public class ConsumerController {
 	
 	@Autowired
-	ConsumerService consumerService;
+	private ConsumerService consumerService;
 	
-	
+	@Autowired
+	private SumService sumService;
 	
 	@GetMapping("/all/cunsumers")
 	public String allConsumers(Model model) {
 		model.addAttribute("consumers", consumerService.getAllConsumers());
+		model.addAttribute("activeSums", sumService.getActiveSum());
 		return "all-consumers";
 	}
 	

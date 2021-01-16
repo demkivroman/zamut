@@ -27,7 +27,7 @@ public class InvoiceItem {
 	private Float size;
 	
 	@ManyToMany(mappedBy = "invItems")
-	private Set<Invoice> invoices = new HashSet<Invoice>();
+	private Set<Sum> invoices = new HashSet<Sum>();
 
 	public InvoiceItem() {
 	}
