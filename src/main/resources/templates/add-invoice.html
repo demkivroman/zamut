@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+table, th, td {
+	padding: 10px;
+	border: 1px solid grey;
+}
+
+table th {
+	background-color: lightgrey;
+}
+</style>
+</head>
+
+<body style="padding-left: 5%; padding-top: 2%">
+	<h1>Making invoice</h1>
+	<div style="padding-top: 20px;">
+		<form th:action="@{|/add/consumer/invoice/${consumerId|}" method = "post">
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Size</th>
+					<th>Enter</th>
+				</tr>
+				<tr th:each="item: ${items}">
+					<td th:text="${item.getName}"></td>
+					<td th:text="${item.getPrice}"></td>
+					<td th:text="${item.getSize}"></td>
+					<td><input type="number" name="${item.getId()}" /></td>
+				</tr>
+			</table>
+			<div style="padding-top: 10px;">
+				<input type="submit" value="Save" /> 
+				<input type="reset" value="Cancel" />
+			</div>
+
+		</form>
+	</div>
+</body>
+</html>
