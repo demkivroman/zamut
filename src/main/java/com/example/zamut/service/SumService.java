@@ -6,11 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class SumService {
     @Autowired
     private SumRepository sumRepository;
+    
+    @Autowired
+    private InvoiceItemRepository invoiceRepository;
 
     public List<Sum> getAllSum() {
         return sumRepository.findAll();
@@ -21,5 +25,9 @@ public class SumService {
     
     public List<Sum> getActiveSum() {
     	return sumRepository.getActiveSum();
+    }
+    
+    public void saveInvoice(Map<String, String> params) {
+    	
     }
 }

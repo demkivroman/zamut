@@ -32,7 +32,7 @@
 					<th scope="row" th:text="${iStat.index + 1}" />
 					<td th:text="${consumer.getFullname()}
 					+' - '+ ${consumer.getAddress()}"></td>
-					<td><a th:href = "@{|/consumer/${consumer.getId()}/invoice|}">New invoice</a></td>
+					<td><a th:href = "@{|/consumer/${consumer.getId()}/invoice|}">Add invoice</a></td>
 					<td><a>Edit client</a></td>
 					<td><a>Delete client</a></td>
 				</tr>

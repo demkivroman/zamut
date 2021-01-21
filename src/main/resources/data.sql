@@ -7,9 +7,9 @@ insert into message (id, message, createdate, expiredate, selected) values (2, '
 insert into message (id, message, createdate, expiredate, selected) values (3, 'third message', '2021-01-14', '2021-01-15', true);
 insert into message (id, message, createdate, expiredate, selected) values (4, 'first message for TD', '2021-01-14', '2021-01-19', false);
 
-insert into sum values (1, 1203.45, '', 1);
-insert into sum values (2, 1500.00, 'This sum belong to Taras Demkiv', 1);
-insert into sum values (3, 600.45, '', 3);
+insert into sum values (1, 1203.45, '2021-10-01', '', 1);
+insert into sum values (2, 1500.00, '2021-10-01', 'This sum belong to Taras Demkiv', 1);
+insert into sum values (3, 600.45, '2021-10-01', '', 3);
 
 insert into invoice_item values (1, 'Шарм вершковий', 363.00, 2.2);
 insert into invoice_item values (2, 'Шарм горіховий', 363.00, 2.2);

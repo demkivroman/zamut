@@ -1,5 +1,6 @@
 package com.example.zamut.model;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,6 +18,9 @@ public class Sum {
     @Min(value = 0, message = "The amount must be greater than 0")
     @Column(nullable = false)
     private Double amount;
+    
+    @Column(nullable = false)
+    private LocalDate date;
 
     private String message;
 

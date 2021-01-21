@@ -23,7 +23,8 @@
 					+' - '+ ${consumer.getConsumer().getAddress()}" />
 					</td>
 					<td th:text="${consumer.message}"></td>
-					<td th:text="${consumer.amount}"></td>
+					<td th:text="${consumer.amount}" 
+					style = "font-weight: bold"></td>
 				</tr>
 			</thead>
 			<tbody>
