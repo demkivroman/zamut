@@ -36,7 +36,6 @@ public class SumService {
 		double totalSum = getTotalAmount(price, quantity);
 		String message = allParams.get("message").trim();
 		
-		
 		Sum entry = new Sum(totalSum, LocalDate.now(),
 				message.isEmpty() ? null : message, consumerRepository.findById(consumerId).get());
 		
