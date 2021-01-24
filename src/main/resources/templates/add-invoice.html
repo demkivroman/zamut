@@ -23,15 +23,15 @@ table th {
 			<table>
 				<tr>
 					<th>Name</th>
-					<th>Price</th>
 					<th>Size</th>
-					<th>Enter</th>
+					<th>Price</th>
+					<th>Quantity</th>
 				</tr>
 				<tr th:each="item: ${items}">
 					<td th:text="${item.getName}"></td>
-					<td th:text="${item.getPrice}"></td>
 					<td th:text="${item.getSize}"></td>
-					<td><input type="number" th:name="${item.getId()}" /></td>
+					<td><input type="number" th:name="${item.getId() + '.price'}" /></td>
+					<td><input type="number" th:name="${item.getId() + '.quantity'}" /></td>
 				</tr>
 			</table>
 			<div style = "padding-top:10px;">

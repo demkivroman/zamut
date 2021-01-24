@@ -1,5 +1,9 @@
 package com.example.zamut.controllers;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +14,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.zamut.model.Sum;
+import com.example.zamut.repository.ConsumerRepository;
+import com.example.zamut.repository.SumRepository;
 import com.example.zamut.service.InvoiceItemService;
 import com.example.zamut.service.SumService;
+
+import com.example.zamut.util.*;
 
 @Controller
 public class SumController {
@@ -34,10 +43,8 @@ public class SumController {
 	public String addInvoice( @PathVariable("consumer_id") long id,
 			@RequestParam Map<String,String> allParams) {
 		
-	//	allParams.entrySet().forEach(
-	//			entry -> System.out.println("param  = " + entry.getKey() + "value = " + entry.getValue()));
-		
-		sumService.saveInvoice(allParams);
+		sumService.saveInvoice(allParams, id);
 		return "redirect:/";
 	}
+	
 }
