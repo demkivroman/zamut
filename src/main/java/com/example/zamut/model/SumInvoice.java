@@ -36,6 +36,16 @@ public class SumInvoice {
 		this.invoice = invoice;
 		this.id = new SumInvoiceId(sum.getId(), invoice.getId());
 	}
+	
+	
+
+	public SumInvoice(Sum sum, InvoiceItem invoice, double price, int count) {
+		this.sum = sum;
+		this.invoice = invoice;
+		this.price = price;
+		this.count = count;
+		this.id = new SumInvoiceId(sum.getId(), invoice.getId());
+	}
 
 	public SumInvoiceId getId() {
 		return id;

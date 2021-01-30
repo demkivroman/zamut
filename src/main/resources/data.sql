@@ -15,8 +15,3 @@ insert into invoice_item values (1, 'Шарм вершковий', 2.2);
 insert into invoice_item values (2, 'Шарм горіховий', 2.2);
 insert into invoice_item values (3, 'Шарм з цілим фундуком', 2.2);
 insert into invoice_item values (4, 'Труфальє', 4.0);
-
-insert into sum_invoice (sum_id, invoice_id, price, count) values (1,1,350.00,2);
-insert into sum_invoice (sum_id, invoice_id, price, count) values (1,4,500.00,1);
-insert into sum_invoice (sum_id, invoice_id, price, count) values (1,2,360.00,1);
-insert into sum_invoice (sum_id, invoice_id, price, count) values (2,1,350.00,2);
