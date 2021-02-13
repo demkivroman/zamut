@@ -16,7 +16,6 @@ public class InvoiceItem {
 	@Column(nullable = false)
 	private String name;
 	
-	@NotBlank(message = "The price can't be empty")
 	@Min(value = 0, message = "The price must be greater than 0")
 	@Column(nullable = false)
 	private Float size;

@@ -22,7 +22,11 @@ table th {
 			method="post">
 			<table>
 				<tr>
-					<th>Name</th>
+					<th><span>Name</span>
+					<a th:href="@{|/consumer/${consumerId}/invoice/add/item|}"> 
+					<span style = "float:right;text-decoration:underline;">add item</span>
+				    </a>
+					</th>
 					<th>Size</th>
 					<th>Price</th>
 					<th>Quantity</th>
@@ -31,10 +35,11 @@ table th {
 					<td th:text="${item.getName}"></td>
 					<td th:text="${item.getSize}"></td>
 					<td><input type="number" th:name="${item.getId() + '.price'}" /></td>
-					<td><input type="number" th:name="${item.getId() + '.quantity'}" /></td>
+					<td><input type="number"
+						th:name="${item.getId() + '.quantity'}" /></td>
 				</tr>
 			</table>
-			<div style = "padding-top:10px;">
+			<div style="padding-top: 10px;">
 				<label>Message(optional):</label>
 			</div>
 			<div>

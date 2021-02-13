@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="padding-left: 5%; padding-top: 2%">
+	<div th:replace="header"></div>
+	<h2>Create new item</h2>
+
+	<div>
+		<form th:action="@{|/consumer/${consumerId}/invoice/add/item|}"
+			 th:object="${item}" method="post">
+			<div>
+				<div>
+					<label for="formName">Name</label>
+				</div>
+				<div>
+					<input type="text" size="50" th:field="*{name}"
+						placeholder="Name input">
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>
+						<label for="size">Size</label>
+					</div>
+					<input type="number" th:field="*{size}" placeholder="Size input">
+				</div>
+			</div>
+
+			<div class="col-auto" style="padding-top: 10px">
+				<button type="submit" class="btn btn-primary mb-2">Submit</button>
+				<button type="reset" class="btn btn-primary mb-2">Cancel</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -41,11 +41,9 @@ public class SumService {
 		List<QuantityParam> quantity = new ArrayList<QuantityParam>();
 
 		saveParamsToMaps(allParams, price, quantity);
-
 		List<Param> correctParam = getCorrectParam(price, quantity);
 
 		double totalSum = getTotalAmount(correctParam);
-
 		String message = allParams.get("message").trim();
 
 		Sum entry = new Sum(totalSum, LocalDate.now(), message.isEmpty() ? null : message,

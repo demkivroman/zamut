@@ -17,4 +17,8 @@ public class InvoiceItemService {
 	public List<InvoiceItem> getAll() {
 		return invoiceRepository.findAll();
 	}
+	
+	public void save(InvoiceItem item) {
+		invoiceRepository.save(item);
+	}
 }
